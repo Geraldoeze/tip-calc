@@ -1,5 +1,6 @@
+
 body {
   margin: 0;
-  letter-spacing: 0.2em;
-  
+  padding: 0;
+  font-family: 'Space Mono';
 }

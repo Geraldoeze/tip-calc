@@ -1,0 +1,25 @@
+.tip-container {
+    background-color: white;
+    height: 60%;
+    width: 80%;
+    display: flex;
+    border-radius: 12px;
+  }
+  
+.tip-result {
+    background-color: green;
+    height: 50px;
+    width: 40%;
+    margin: 1rem;
+    border-radius: inherit;
+  }
+
+.tip-form {
+    width: 60%;
+    margin: 1rem;
+    border-radius: inherit;
+  }
+
+label {
+    display: block;
+}  
