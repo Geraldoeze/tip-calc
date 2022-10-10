@@ -7,19 +7,18 @@ const TipCal = () => {
         <div className="tip-container ">
             <div className="tip-form">
                 <form>
-                    <label htmlFor="Bill">Bills</label> 
-                    <input />
+                    <label htmlFor="Bill">Bill</label> 
+                    <input className="tip-input"  type="text"/>
                     <label htmlFor="tip">Select Tip %</label>
-                    <div>
-                        {percentage.map((per, id, arr) => {
-                            return (
-                            <button id={id}>{per}%</button>
-                            )
-                        })}
+                    {percentage.map((per, id, arr) => {
+                        return (
+                        <button key={id}>{per}%</button>
+                        )
+                    })}
                         <input />
                     <label htmlFor="number" >Number of People</label>
-                    <input />
-                    </div>
+                    <input className="tip-input" type="text" />
+                
                 </form>
             </div>
             <div className="tip-result">
