@@ -6,13 +6,6 @@
     border-radius: 12px;
   }
   
-.tip-result {
-    background-color: hsl(183, 100%, 15%);
-    height: 92%;
-    width: 50%;
-    margin: 1rem;
-    border-radius: inherit;
-  }
 
 .tip-form {
     width: 50%;
@@ -46,20 +39,68 @@ label {
     font-size: 24px;
     border: 0;
     border-radius: 5px;
-    background-color:hsl(189, 41%, 97%); ;
+    background-color:hsl(189, 41%, 97%); 
 }
 
 input:hover {
-    border: 3px solid hsl(186, 14%, 43%);
+    border: 3px solid hsl(172, 67%, 45%);
 }
 /* changes the default border color */
 input:focus{
     outline: none !important;
-    border: 3px solid hsl(186, 14%, 43%);   
+    border: 3px solid hsl(172, 67%, 45%);   
 }
 /* hides the default arrow button */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+/*  */
+
+.tip-result {
+  background-color: hsl(183, 100%, 15%);
+  height: 92%;
+  width: 50%;
+  margin: 1rem;
+  border-radius: inherit;
+  display: inline-block;
+}
+
+.tip-amount {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+h3 {
+  margin: 2rem 1rem;
+  font-size: 15px;
+  color: white
+  
+}
+
+span {
+  color:  hsl(186, 14%, 43%);
+}
+
+p {
+  margin: 2rem 1rem;
+  color: hsl(172, 67%, 45%);
+  font-size: 42px;
+  font-weight: 700;
+  
+}
+
+.btn {
+  display: block;
+  margin: 25% 10% 5% 10% ;
+  width: 80%;
+  height: 2.2rem;
+  border: 0;
+  border-radius: 5px;
+  color: hsl(186, 14%, 43%);
+  background-color:hsla(172, 82%, 30%, 0.493);
 }

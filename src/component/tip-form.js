@@ -7,22 +7,22 @@ const TipCal = () => {
 
     }
     return ( 
-        <div className="tip-container ">
+        <form className="tip-container "> 
             <div className="tip-form">
-                <form>
+               
                     <label htmlFor="Bill">Bill</label> 
                     <input className="tip-input"  type="number"/>
                     <label htmlFor="tip">Select Tip %</label>
                     {percentage.map((per, id, arr) => {
                         return (
-                        <button key={id}>{per}%</button>
+                        <button type="button" key={id}>{per}%</button>
                         )
                     })}
                         <input className="tip-input__odd" type="number"/>
                     <label htmlFor="number" >Number of People</label>
                     <input className="tip-input" type="number" />
                 
-                </form>
+               
             </div>
             <div className="tip-result">
               <div className="tip-amount">
@@ -33,9 +33,10 @@ const TipCal = () => {
                 <h3>Total<br /><span>/ person</span></h3>
                 <p>$0.00</p>
               </div>
-                <button type='reset' onClick={SubmitHandler}>RESET</button>
-            </div>
-        </div>
+                <button className="btn" type='reset' onClick={SubmitHandler}>RESET</button>
+            </div> 
+        </form>
+        
      );
 }
  
