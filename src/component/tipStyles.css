@@ -23,10 +23,11 @@
 label {
     display: block;
     font-size: 15px;
-    color:  hsl(184, 14%, 56%);
+    color:  hsl(186, 14%, 43%);
     margin: 0.4rem 1.5rem;
+    font-weight: bold;
 }  
-
+/* Input styles */
 .tip-input {
     height: 3rem;
     width: 90%;
@@ -35,13 +36,30 @@ label {
     border: 0;
     border-radius: 5px;
     background-color: hsl(189, 41%, 97%);
+    overflow: hidden;
+    text-align: end;
 }
 
-.tip-input:hover {
+.tip-input__odd {
+    height: 3rem;
+    width: 40%;
+    font-size: 24px;
+    border: 0;
+    border-radius: 5px;
+    background-color:hsl(189, 41%, 97%); ;
+}
+
+input:hover {
     border: 3px solid hsl(186, 14%, 43%);
 }
-.tip-input:focus {
+/* changes the default border color */
+input:focus{
     outline: none !important;
-    border: 3px solid hsl(186, 14%, 43%);
-    
+    border: 3px solid hsl(186, 14%, 43%);   
+}
+/* hides the default arrow button */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
