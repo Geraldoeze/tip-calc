@@ -1,6 +1,21 @@
 
+
+:root {
+  --font-family: 'Space Mono', sans-serif;
+
+  --color-strong-cyan: hsl(172, 67%, 45%);
+
+  --color-dark-cyan: hsl(183, 100%, 15%);
+  --color-grayish-cyan: hsl(186, 14%, 43%);
+  --color-cyan: hsl(184, 14%, 56%);
+  --color-light-cyan:hsl(185, 41%, 84%);
+  --color-very-light-cyan:  hsl(189, 41%, 97%);
+  --color-white:  hsl(0, 0%, 100%);
+}
+ 
 body {
   margin: 0;
   padding: 0;
   font-family: 'Space Mono';
 }
+

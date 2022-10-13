@@ -11,16 +11,19 @@ const TipCal = () => {
             <div className="tip-form">
                
                     <label htmlFor="Bill">Bill</label> 
-                    <input className="tip-input"  type="number"/>
+                    <input className="tip-input"  type="number" placeholder="0"/>
                     <label htmlFor="tip">Select Tip %</label>
+                    <div className="btn_cover">
                     {percentage.map((per, id, arr) => {
                         return (
-                        <button type="button" key={id}>{per}%</button>
+                            <button className="btn_keys" type="button" key={id}>{per}%</button>
                         )
                     })}
-                        <input className="tip-input__odd" type="number"/>
+                    <input className="tip-input__odd" type="number" placeholder="Custom"/>
+                    </div>
+                        
                     <label htmlFor="number" >Number of People</label>
-                    <input className="tip-input" type="number" />
+                    <input className="tip-input" type="number" placeholder="0"/>
                 
                
             </div>

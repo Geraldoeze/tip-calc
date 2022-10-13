@@ -20,35 +20,61 @@ label {
     margin: 0.4rem 1.5rem;
     font-weight: bold;
 }  
+
+.btn_cover {
+  width: 100%;
+  display: flex;
+  margin: 1rem 2rem;
+  flex-wrap: wrap;
+}
+
+.btn_keys {
+  height: 3rem;
+  width: 25%;
+  margin: 0.3rem;
+  border-radius: 5px;
+  background-color: hsl(183, 100%, 15%);
+}
+
+.btn_keys:hover {
+  color: var(--color-dark-cyan);
+}
+
 /* Input styles */
 .tip-input {
     height: 3rem;
     width: 90%;
     margin: 0.5rem 1.5rem;
     font-size: 24px;
+    font-weight: 700;
     border: 0;
     border-radius: 5px;
-    background-color: hsl(189, 41%, 97%);
+    background-color: var(--color-white);
     overflow: hidden;
+    color: var(--color-dark-cyan);
     text-align: end;
 }
 
 .tip-input__odd {
     height: 3rem;
-    width: 40%;
+    width: 25%;
+    margin: 1rem 0.3rem;
+    font-weight: 700;
     font-size: 24px;
     border: 0;
+    text-align: end;
+    color:  hsl(183, 100%, 15%);
     border-radius: 5px;
-    background-color:hsl(189, 41%, 97%); 
+    background-color: var(--color-very-light-cyan);
 }
 
 input:hover {
-    border: 3px solid hsl(172, 67%, 45%);
+    border: 3px solid var(--color-strong-cyan)
 }
 /* changes the default border color */
 input:focus{
     outline: none !important;
-    border: 3px solid hsl(172, 67%, 45%);   
+    border: 3px solid var(--color-strong-cyan);
 }
 /* hides the default arrow button */
 input::-webkit-outer-spin-button,
@@ -60,7 +86,7 @@ input::-webkit-inner-spin-button {
 /*  */
 
 .tip-result {
-  background-color: hsl(183, 100%, 15%);
+  background-color: var(--color-dark-cyan);
   height: 92%;
   width: 50%;
   margin: 1rem;
@@ -71,6 +97,7 @@ input::-webkit-inner-spin-button {
 .tip-amount {
   display: flex;
   width: 100%;
+  margin: 0 1rem;
   align-items: center;
   justify-content: space-between;
 }
@@ -78,17 +105,17 @@ input::-webkit-inner-spin-button {
 h3 {
   margin: 2rem 1rem;
   font-size: 15px;
-  color: white
+  color: var(--color-white);
   
 }
 
 span {
-  color:  hsl(186, 14%, 43%);
+  color:  var( --color-cyan);
 }
 
 p {
-  margin: 2rem 1rem;
-  color: hsl(172, 67%, 45%);
+  margin: 2rem 2.8rem;
+  color: var(--color-strong-cyan);
   font-size: 42px;
   font-weight: 700;
   
@@ -96,11 +123,18 @@ p {
 
 .btn {
   display: block;
-  margin: 25% 10% 5% 10% ;
+  margin: 20% 10% 5% 10% ;
   width: 80%;
   height: 2.2rem;
   border: 0;
   border-radius: 5px;
-  color: hsl(186, 14%, 43%);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-cyan);
   background-color:hsla(172, 82%, 30%, 0.493);
+}
+
+button:hover {
+  background-color: var(--color-strong-cyan);
+  color: var(--color-dark-cyan);
 }
