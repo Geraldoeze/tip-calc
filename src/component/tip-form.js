@@ -4,10 +4,11 @@ import './tipStyles.css';
 const TipCal = () => {
     const percentage = [5, 10, 15, 25, 50];
     const SubmitHandler = (event) => {
-
+        event.preventDefault();
+        console.log(event)
     }
     return ( 
-        <form className="tip-container "> 
+        <form className="tip-container " onSubmit={SubmitHandler}> 
             <div className="tip-form">
                
                     <label htmlFor="Bill">Bill</label> 
@@ -36,7 +37,7 @@ const TipCal = () => {
                 <h3>Total<br /><span>/ person</span></h3>
                 <p>$0.00</p>
               </div>
-                <button className="btn" type='reset' onClick={SubmitHandler}>RESET</button>
+                <button className="btn" type='reset'>RESET</button>
             </div> 
         </form>
         

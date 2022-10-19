@@ -24,7 +24,7 @@ label {
 .btn_cover {
   width: 100%;
   display: flex;
-  margin: 1rem 2rem;
+  margin: 1rem 24px;
   flex-wrap: wrap;
 }
 
@@ -34,9 +34,16 @@ label {
   margin: 0.3rem;
   border-radius: 5px;
   background-color: hsl(183, 100%, 15%);
+  color: var(--color-white);
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 24px;
 }
 
 .btn_keys:hover {
+  color: var(--color-dark-cyan);
+}
+.btn_keys:checked {
   color: var(--color-dark-cyan);
 }
 
@@ -44,7 +51,8 @@ label {
 .tip-input {
     height: 3rem;
     width: 90%;
-    margin: 0.5rem 1.5rem;
+    margin: 0.3rem 1.5rem;
+    font-family: inherit;
     font-size: 24px;
     font-weight: 700;
     border: 0;
@@ -58,14 +66,19 @@ label {
 .tip-input__odd {
     height: 3rem;
     width: 25%;
-    margin: 1rem 0.3rem;
+    margin: 0.3rem;
     font-weight: 700;
     font-size: 24px;
     border: 0;
     text-align: end;
-    color:  hsl(183, 100%, 15%);
     border-radius: 5px;
     background-color: var(--color-very-light-cyan);
+}
+
+::placeholder {
+  color: var(--color-cyan);
+  font-family: 'Space Mono';
+  font-size: 24px;
 }
 
 input:hover {
