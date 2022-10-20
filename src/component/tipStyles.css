@@ -1,7 +1,7 @@
 .tip-container {
     background-color: hsl(0, 0%, 100%);
-    height: 55%;
-    width: 65%;
+    height: 50%;
+    width: 60%;
     display: flex;
     border-radius: 12px;
   }
@@ -30,8 +30,8 @@ label {
 
 .btn_keys {
   height: 3rem;
-  width: 25%;
-  margin: 0.3rem;
+  width: 28%;
+  margin: 0.5rem;
   border-radius: 5px;
   background-color: hsl(183, 100%, 15%);
   color: var(--color-white);
@@ -43,28 +43,31 @@ label {
 .btn_keys:hover {
   color: var(--color-dark-cyan);
 }
-.btn_keys:checked {
-  color: var(--color-dark-cyan);
-}
+
 
 span {
-  margin-left: 5px;
+  margin: 10px;
   font-size: 20px;
 }
 
 .input-cover {
-  width: 95%;
-  margin: 0.3rem 1.5rem;
+  width: 93%;
+  margin: 1rem 1.5rem;
   background-color: var(--color-light-cyan);
-  border: 3px solid var(--color-strong-cyan);
+  display: flex;
   border-radius: 5px;
+}
+
+.input-cover:hover {
+  border: 3px solid var(--color-strong-cyan);
 }
 
 /* Input styles */
 
 .tip-input {
-  height: 3rem;
-  width: 90%;
+  height: 2.5rem;
+  width: 60%;
+  margin-left: auto;
   font-family: inherit;
   font-size: 24px;
   font-weight: 700;
@@ -77,7 +80,7 @@ span {
 
 .tip-input__odd {
     height: 3rem;
-    width: 25%;
+    width: 28%;
     margin: 0.3rem;
     font-family: inherit;
     font-weight: 700;
@@ -87,6 +90,10 @@ span {
     text-align: end;
     border-radius: 5px;
     background-color: var(--color-very-light-cyan);
+}
+
+.tip-input__odd:hover {
+  border: 3px solid var(--color-strong-cyan);
 }
 
 ::placeholder {
@@ -111,11 +118,13 @@ input::-webkit-inner-spin-button {
 
 .tip-result {
   background-color: var(--color-dark-cyan);
-  height: 92%;
+  height: 88%;
   width: 50%;
-  margin: 1rem;
+  margin: 1.5rem;
   border-radius: inherit;
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  
 }
 
 .tip-amount {
@@ -127,7 +136,7 @@ input::-webkit-inner-spin-button {
 }
 
 h3 {
-  margin: 2rem 1rem;
+  margin: 1rem 1rem;
   font-size: 15px;
   color: var(--color-white);
   
@@ -138,7 +147,7 @@ span {
 }
 
 p {
-  margin: 2rem 2.8rem;
+  margin: 1rem 2.8rem;
   color: var(--color-strong-cyan);
   font-size: 42px;
   font-weight: 700;
@@ -147,9 +156,9 @@ p {
 
 .btn {
   display: block;
-  margin: 20% 10% 5% 10% ;
+  
   width: 80%;
-  height: 2.2rem;
+  height: 3rem;
   border: 0;
   border-radius: 5px;
   font-size: 15px;
@@ -161,4 +170,11 @@ p {
 button:hover {
   background-color: var(--color-strong-cyan);
   color: var(--color-dark-cyan);
+}
+
+
+@media only screen and (max-width: 768px) {
+  .tip-container {
+   width: 80%;
+  }
 }
