@@ -3,30 +3,29 @@ import './tipStyles.css';
 
 const TipCal = () => {
     const percentage = [5, 10, 15, 25, 50];
-    const SubmitHandler = (event) => {
-        event.preventDefault();
-        console.log(event)
+    console.log(document.getElementById("bill"))
+    const SubmitHandler = () => {
+        // event.preventDefault();
+        console.log()
     }
     return ( 
         <form className="tip-container " onSubmit={SubmitHandler}> 
-            <div className="tip-form">
-               
-                    <label htmlFor="Bill">Bill</label> 
-                    <input className="tip-input"  type="number" placeholder="0"/>
-                    <label htmlFor="tip">Select Tip %</label>
-                    <div className="btn_cover">
-                    {percentage.map((per, id, arr) => {
-                        return (
-                            <button className="btn_keys" type="button" key={id}>{per}%</button>
-                        )
-                    })}
-                    <input className="tip-input__odd" type="number" placeholder="Custom"/>
-                    </div>
-                        
-                    <label htmlFor="number" >Number of People</label>
-                    <input className="tip-input" type="number" placeholder="0"/>
-                
-               
+            <div className="tip-form">   
+
+                <label htmlFor="Bill">Bill</label> 
+                <input className="tip-input" name="bill" id="bill" type="number" placeholder="0"/>
+                <label htmlFor="tip">Select Tip %</label>
+                <div className="btn_cover">
+                {percentage.map((per, id, arr) => {
+                    return (
+                        <button className="btn_keys" type="button" key={id}>{per}%</button>
+                    )
+                })}
+                <input className="tip-input__odd" name="customTip" id="customTip" type="number" placeholder="Custom"/>
+                </div>                
+                <label htmlFor="number" >Number of People</label>
+                <input className="tip-input" name="people" id="people" type="number" placeholder="0"/>    
+
             </div>
             <div className="tip-result">
               <div className="tip-amount">
