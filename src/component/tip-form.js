@@ -3,11 +3,22 @@ import './tipStyles.css';
 import {FaDollarSign} from 'react-icons/fa';
 import {BsPersonFill} from 'react-icons/bs';
 
+
 const TipCal = () => {
     const percentage = [5, 10, 15, 25, 50];
     // const [query, SetQuery] = useState()
 
+    const tipCalculator = (event) => {
+        event.preventDefault()
+        let bill = parseInt(document.getElementById("bill").value);
+        let customTip = parseInt(document.getElementById("customTip").value);
+        let numOfPeople = parseInt(document.getElementById("numOfPeople").value);
 
+        let total = (bill + (bill * (customTip / 100))) / numOfPeople;
+
+        // document.getElementById('').innerHTML = `$${total.toFixed(2)}`;
+        console.log(total)
+    }
 
     const SubmitHandler = () => {
         // event.preventDefault();
@@ -28,7 +39,6 @@ const TipCal = () => {
                     <span><FaDollarSign/></span> 
                     <input 
                         className="tip-input" 
-                        name="bill" 
                         id="bill" 
                         type="number" 
                         placeholder="0"
@@ -45,7 +55,6 @@ const TipCal = () => {
                 })}
                 <input 
                    className="tip-input__odd" 
-                   name="customTip" 
                    id="customTip" 
                    type="number" 
                    placeholder="Custom"
@@ -57,8 +66,7 @@ const TipCal = () => {
                     <span><BsPersonFill/></span>
                     <input 
                         className="tip-input" 
-                        name="people" 
-                        id="people" 
+                        id="numOfPeople" 
                         type="number" 
                         placeholder="0"
                         onChange={changeHandler}
@@ -74,9 +82,10 @@ const TipCal = () => {
               </div>
               <div className="tip-amount">
                 <h3>Total<br /><span>/ person</span></h3>
-                <p>$0.00</p>
+                <p id="total">$0.00</p>
               </div>
                 <button className="btn" type='reset'>RESET</button>
+                <button onClick={tipCalculator}>RUN</button>
             </div> 
         </form>
         
