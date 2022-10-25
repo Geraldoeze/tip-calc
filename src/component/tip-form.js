@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import './tipStyles.css';
 import {FaDollarSign} from 'react-icons/fa';
 import {BsPersonFill} from 'react-icons/bs';
@@ -7,6 +7,8 @@ import {BsPersonFill} from 'react-icons/bs';
 const TipCal = () => {
     const percentage = [5, 10, 15, 25, 50];
     // const [query, SetQuery] = useState()
+    // const x = document.getElementById("btnTip").innerHTML;
+    // console.log(x)
 
     const tipCalculator = (event) => {
         event.preventDefault()
@@ -19,9 +21,19 @@ const TipCal = () => {
         // document.getElementById('').innerHTML = `$${total.toFixed(2)}`;
         console.log(total)
     }
-
+    function myFunction(id) {
+        const x = document.getElementById(id+'S').value;
+        x.map((per, id, arr) => {
+            return(
+                console.log(per.pop('%'))
+                
+            )
+            
+        })
+        
+        
+    }
     const SubmitHandler = () => {
-        // event.preventDefault();
         console.log()
     }
     const changeHandler = (e) => {
@@ -48,9 +60,15 @@ const TipCal = () => {
                 
                 <label htmlFor="tip">Select Tip %</label>
                 <div className="btn_cover">
-                {percentage.map((per, id, arr) => {
+                {percentage.map((per, ind, arr) => {
                     return (
-                        <button className="btn_keys" type="button" key={id}>{per}%</button>
+                        <button
+                            className="btn_keys" 
+                            id={ind+'S'} type="button" 
+                            value={per+'%'}
+                            onClick={(id) => myFunction(ind)}
+                            key={ind} 
+                        >{per+'%'}</button>
                     )
                 })}
                 <input 
