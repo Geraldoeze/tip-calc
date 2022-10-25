@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import './tipStyles.css';
 import {FaDollarSign} from 'react-icons/fa';
 import {BsPersonFill} from 'react-icons/bs';
@@ -6,31 +6,15 @@ import {BsPersonFill} from 'react-icons/bs';
 
 const TipCal = () => {
     const percentage = [5, 10, 15, 25, 50];
-    // const [query, SetQuery] = useState()
+    const [tip, SetTip] = useState(0);
     // const x = document.getElementById("btnTip").innerHTML;
     // console.log(x)
 
-    const tipCalculator = (event) => {
-        event.preventDefault()
-        let bill = parseInt(document.getElementById("bill").value);
-        let customTip = parseInt(document.getElementById("customTip").value);
-        let numOfPeople = parseInt(document.getElementById("numOfPeople").value);
-
-        let total = (bill + (bill * (customTip / 100))) / numOfPeople;
-
-        // document.getElementById('').innerHTML = `$${total.toFixed(2)}`;
-        console.log(total)
-    }
+   
     function myFunction(id) {
         const x = document.getElementById(id+'S').value;
-        x.map((per, id, arr) => {
-            return(
-                console.log(per.pop('%'))
-                
-            )
-            
-        })
-        
+            console.log(x)
+            SetTip(x)
         
     }
     const SubmitHandler = () => {
@@ -38,10 +22,22 @@ const TipCal = () => {
     }
     const changeHandler = (e) => {
         return (
+            SetTip(e.target.value),
             console.log(e.target.value)   
         )
     } 
-    console.log()
+    const tipCalculator = (event) => {
+        event.preventDefault()
+        let bill = parseInt(document.getElementById("bill").value);
+        let customTip = tip;
+        let numOfPeople = parseInt(document.getElementById("numOfPeople").value);
+
+        let total = (bill + (bill * (customTip / 100))) / numOfPeople;
+
+        // document.getElementById('').innerHTML = `$${total.toFixed(2)}`;
+        console.log(bill, customTip, numOfPeople)
+    }
+    
     return ( 
         <form className="tip-container " onSubmit={SubmitHandler}> 
             <div className="tip-form">   
@@ -65,7 +61,7 @@ const TipCal = () => {
                         <button
                             className="btn_keys" 
                             id={ind+'S'} type="button" 
-                            value={per+'%'}
+                            value={per}
                             onClick={(id) => myFunction(ind)}
                             key={ind} 
                         >{per+'%'}</button>
