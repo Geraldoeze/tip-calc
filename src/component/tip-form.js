@@ -20,22 +20,32 @@ const TipCal = () => {
     const SubmitHandler = () => {
         console.log()
     }
-    const changeHandler = (e) => {
+    const changeCustomHandler = (e) => {
         return (
             SetTip(e.target.value),
+            console.log(e.target.value)   
+        )
+    }
+    const changeHandler = (e) => {
+        return (
             console.log(e.target.value)   
         )
     } 
     const tipCalculator = (event) => {
         event.preventDefault()
         let bill = parseInt(document.getElementById("bill").value);
-        let customTip = tip;
+        let customTip = parseInt(tip);
         let numOfPeople = parseInt(document.getElementById("numOfPeople").value);
 
+        let amount = bill * (customTip / 100) / numOfPeople
         let total = (bill + (bill * (customTip / 100))) / numOfPeople;
 
-        // document.getElementById('').innerHTML = `$${total.toFixed(2)}`;
-        console.log(bill, customTip, numOfPeople)
+        let TP = document.getElementById('total');
+        TP.innerHTML = '$'+total.toFixed(2);
+
+        let TA = document.getElementById('tipAmount');
+        TA.innerHTML = '$'+amount.toFixed(2);
+        console.log(bill, customTip, numOfPeople, total)
     }
     
     return ( 
@@ -60,7 +70,8 @@ const TipCal = () => {
                     return (
                         <button
                             className="btn_keys" 
-                            id={ind+'S'} type="button" 
+                            id={ind+'S'} 
+                            type="button" 
                             value={per}
                             onClick={(id) => myFunction(ind)}
                             key={ind} 
@@ -72,7 +83,7 @@ const TipCal = () => {
                    id="customTip" 
                    type="number" 
                    placeholder="Custom"
-                   onChange={changeHandler}
+                   onChange={changeCustomHandler}
                 />
                 </div>                
                 <label htmlFor="number" >Number of People</label>
@@ -92,7 +103,7 @@ const TipCal = () => {
             <div className="tip-result">
               <div className="tip-amount">
                 <h3>Tip Amount<br /><span>/ person</span></h3>
-                <p>$0.00</p>
+                <p id="tipAmount">$0.00</p>
               </div>
               <div className="tip-amount">
                 <h3>Total<br /><span>/ person</span></h3>
