@@ -39,19 +39,26 @@ const TipCal = () => {
         let customTip = parseInt(tip);
         let numOfPeople = parseInt(document.getElementById("numOfPeople").value);
 
-        let amount = bill * (customTip / 100) / numOfPeople
-        let total = (bill + (bill * (customTip / 100))) / numOfPeople;
+        let personbill = bill * (customTip / 100) / numOfPeople;
+        let totalbill = (bill + (bill * (customTip / 100))) / numOfPeople;
 
-        let TP = document.getElementById('total');
-        TP.innerHTML = '$'+total.toFixed(2);
+        SetAmount(personbill);
+        SetTotal(totalbill);
+        
 
-        let TA = document.getElementById('tipAmount');
-        TA.innerHTML = '$'+amount.toFixed(2);
-        console.log(bill, customTip, numOfPeople, total)
+        // let TA = document.getElementById('tipAmount');
+        // TA.innerHTML = '$'+amount.toFixed(2);
+        // console.log(bill, customTip, numOfPeople, total)
+    }
+
+    const resetForm = () => {
+        SetAmount(0);
+        SetTotal(0);
+        SetTip(0);
     }
     
     return ( 
-        <form className="tip-container " onSubmit={SubmitHandler}> 
+        <form className="tip-container" onSubmit={tipCalculator}> 
             <div className="tip-form">   
 
                 <label htmlFor="Bill">Bill</label>
@@ -111,8 +118,7 @@ const TipCal = () => {
                 <h3>Total<br /><span>/ person</span></h3>
                 <p id="total">${total.toFixed(2)}</p>
               </div>
-                <button className="btn" type='reset'>RESET</button>
-                <button onClick={tipCalculator}>RUN</button>
+                <button className="btn" type='reset' onClick={resetForm}>RESET</button>
             </div> 
         </form>
         

@@ -66,8 +66,8 @@ span {
 
 .tip-input {
   height: 2.5rem;
-  width: 60%;
-  margin-left: auto;
+  width: 82%;
+  margin: 0.2rem;
   font-family: inherit;
   font-size: 24px;
   font-weight: 700;
@@ -81,15 +81,15 @@ span {
 .tip-input__odd {
     height: 3rem;
     width: 28%;
-    margin: 0.3rem;
+    margin: 0.5rem;
+    border-radius: 5px;
     font-family: inherit;
     font-weight: 700;
     font-size: 24px;
     color: var(--color-dark-cyan);
     border: 0;
-    text-align: end;
-    border-radius: 5px;
-    background-color: var(--color-very-light-cyan);
+    text-align: center;
+    background-color: var(--color-light-cyan);
 }
 
 .tip-input__odd:hover {
@@ -156,10 +156,10 @@ p {
 
 .btn {
   display: block;
-  
   width: 80%;
   height: 3rem;
   border: 0;
+  margin: auto;
   border-radius: 5px;
   font-size: 15px;
   font-weight: 700;
