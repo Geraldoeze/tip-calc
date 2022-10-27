@@ -7,6 +7,8 @@ import {BsPersonFill} from 'react-icons/bs';
 const TipCal = () => {
     const percentage = [5, 10, 15, 25, 50];
     const [tip, SetTip] = useState(0);
+    const [ total, SetTotal ] = useState(0);
+    const [ amount, SetAmount ] = useState(0);
     // const x = document.getElementById("btnTip").innerHTML;
     // console.log(x)
 
@@ -103,11 +105,11 @@ const TipCal = () => {
             <div className="tip-result">
               <div className="tip-amount">
                 <h3>Tip Amount<br /><span>/ person</span></h3>
-                <p id="tipAmount">$0.00</p>
+                <p id="tipAmount">${amount.toFixed(2)}</p>
               </div>
               <div className="tip-amount">
                 <h3>Total<br /><span>/ person</span></h3>
-                <p id="total">$0.00</p>
+                <p id="total">${total.toFixed(2)}</p>
               </div>
                 <button className="btn" type='reset'>RESET</button>
                 <button onClick={tipCalculator}>RUN</button>
