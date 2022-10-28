@@ -5,39 +5,40 @@ import {BsPersonFill} from 'react-icons/bs';
 
 
 const TipCal = () => {
+
     const percentage = [5, 10, 15, 25, 50];
+
+    const [ valid, setValid ] = useState(false);
     const [tip, SetTip] = useState(0);
     const [ total, SetTotal ] = useState(0);
     const [ amount, SetAmount ] = useState(0);
+   
     // const x = document.getElementById("btnTip").innerHTML;
     // console.log(x)
 
    
     function myFunction(id) {
         const x = document.getElementById(id+'S').value;
-            console.log(x)
             SetTip(x)
-        
     }
-    const SubmitHandler = () => {
-        console.log()
-    }
+  
     const changeCustomHandler = (e) => {
         return (
-            SetTip(e.target.value),
-            console.log(e.target.value)   
+            SetTip(e.target.value) 
         )
     }
-    const changeHandler = (e) => {
-        return (
-            console.log(e.target.value)   
-        )
-    } 
+  
     const tipCalculator = (event) => {
         event.preventDefault()
+       
         let bill = parseInt(document.getElementById("bill").value);
         let customTip = parseInt(tip);
         let numOfPeople = parseInt(document.getElementById("numOfPeople").value);
+
+        if (numOfPeople >= 0) {
+            console.log(numOfPeople)
+            return setValid(true);
+        }
 
         let personbill = bill * (customTip / 100) / numOfPeople;
         let totalbill = (bill + (bill * (customTip / 100))) / numOfPeople;
@@ -50,7 +51,7 @@ const TipCal = () => {
         // TA.innerHTML = '$'+amount.toFixed(2);
         // console.log(bill, customTip, numOfPeople, total)
     }
-
+    console.log(valid )
     const resetForm = () => {
         SetAmount(0);
         SetTotal(0);
@@ -61,7 +62,7 @@ const TipCal = () => {
         <form className="tip-container" onSubmit={tipCalculator}> 
             <div className="tip-form">   
 
-                <label htmlFor="Bill">Bill</label>
+                <label className="label_valid" htmlFor="Bill">Bill</label>
                 <div className="input-cover">
                     <span><FaDollarSign/></span> 
                     <input 
@@ -69,11 +70,11 @@ const TipCal = () => {
                         id="bill" 
                         type="number" 
                         placeholder="0"
-                        onChange={changeHandler}
+                        // onChange={changeHandler}
                     />
                 </div>
                 
-                <label htmlFor="tip">Select Tip %</label>
+                <label className="label_valid" htmlFor="tip">Select Tip %</label>
                 <div className="btn_cover">
                 {percentage.map((per, ind, arr) => {
                     return (
@@ -94,17 +95,22 @@ const TipCal = () => {
                    placeholder="Custom"
                    onChange={changeCustomHandler}
                 />
-                </div>                
-                <label htmlFor="number" >Number of People</label>
-                <div className="input-cover">
-                    <span><BsPersonFill/></span>
-                    <input 
-                        className="tip-input" 
-                        id="numOfPeople" 
-                        type="number" 
-                        placeholder="0"
-                        onChange={changeHandler}
-                    />
+                </div>
+                <div className="content-cover">
+
+                    <label className="label_valid" htmlFor="number" >Number of People</label>
+                    { valid && <label className="label_invalid" htmlFor="number">Can't be zero</label>}
+                   
+                    <div className=  {valid ? "input-cover invalid" : "input-cover"}>
+                        <span><BsPersonFill/></span>
+                        <input 
+                            className="tip-input" 
+                            id="numOfPeople" 
+                            type="number" 
+                            placeholder="0"
+                            // onChange={changeHandler}
+                        />
+                    </div>
                 </div>
                     
 
@@ -119,6 +125,7 @@ const TipCal = () => {
                 <p id="total">${total.toFixed(2)}</p>
               </div>
                 <button className="btn" type='reset' onClick={resetForm}>RESET</button>
+                <button type="submit" onClick={tipCalculator}>RUN</button>
             </div> 
         </form>
         
