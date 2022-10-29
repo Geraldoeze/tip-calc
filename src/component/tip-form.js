@@ -4,60 +4,66 @@ import {FaDollarSign} from 'react-icons/fa';
 import {BsPersonFill} from 'react-icons/bs';
 
 
+const percentage = [5, 10, 15, 25, 50];
+
+
 const TipCal = () => {
 
-    const percentage = [5, 10, 15, 25, 50];
-
     const [ valid, setValid ] = useState(false);
-    const [tip, SetTip] = useState(0);
-    const [ total, SetTotal ] = useState(0);
-    const [ amount, SetAmount ] = useState(0);
+    const [tip, setTip] = useState(0);
+    const [ total, setTotal ] = useState(0);
+    const [ amount, setAmount ] = useState(0);
    
-    // const x = document.getElementById("btnTip").innerHTML;
-    // console.log(x)
-
    
-    function myFunction(id) {
+    function btnFunction(id) {
         const x = document.getElementById(id+'S').value;
-            SetTip(x)
+            setTip(x)
     }
   
-    const changeCustomHandler = (e) => {
-        return (
-            SetTip(e.target.value) 
-        )
-    }
+    const changeCustomHandler = (e) =>   setTip(e.target.value) 
+        
   
     const tipCalculator = (event) => {
         event.preventDefault()
-       
+        
         let bill = parseInt(document.getElementById("bill").value);
         let customTip = parseInt(tip);
         let numOfPeople = parseInt(document.getElementById("numOfPeople").value);
 
-        if (numOfPeople >= 0) {
-            console.log(numOfPeople)
-            return setValid(true);
+        console.log(bill, customTip, numOfPeople)
+
+        // checks if a value is passed t the input
+        if (isNaN(bill) || isNaN(numOfPeople)) {
+            return (
+                console.log("baller"),
+                setAmount(0),
+                setTotal(0)
+            )
+        } else if (numOfPeople <= 0) {
+            setValid(true)
         }
 
-        let personbill = bill * (customTip / 100) / numOfPeople;
-        let totalbill = (bill + (bill * (customTip / 100))) / numOfPeople;
 
-        SetAmount(personbill);
-        SetTotal(totalbill);
+        
+        
+        
+        // let personbill = bill * (customTip / 100) / numOfPeople;
+        // let totalbill = (bill + (bill * (customTip / 100))) / numOfPeople;
+
+ 
         
 
-        // let TA = document.getElementById('tipAmount');
-        // TA.innerHTML = '$'+amount.toFixed(2);
-        // console.log(bill, customTip, numOfPeople, total)
+        
     }
-    console.log(valid )
+    console.log(valid, isNaN(amount) )
+
     const resetForm = () => {
-        SetAmount(0);
-        SetTotal(0);
-        SetTip(0);
+        setAmount(0);
+        setTotal(0);
+        setTip(0);
+        setValid(false);
     }
-    
+   
     return ( 
         <form className="tip-container" onSubmit={tipCalculator}> 
             <div className="tip-form">   
@@ -83,7 +89,7 @@ const TipCal = () => {
                             id={ind+'S'} 
                             type="button" 
                             value={per}
-                            onClick={(id) => myFunction(ind)}
+                            onClick={(id) => btnFunction(ind)}
                             key={ind} 
                         >{per+'%'}</button>
                     )
@@ -125,7 +131,7 @@ const TipCal = () => {
                 <p id="total">${total.toFixed(2)}</p>
               </div>
                 <button className="btn" type='reset' onClick={resetForm}>RESET</button>
-                <button type="submit" onClick={tipCalculator}>RUN</button>
+                <button style={{"display": "none"}} type="submit" onClick={tipCalculator}></button>
             </div> 
         </form>
         

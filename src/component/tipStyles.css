@@ -120,21 +120,25 @@ span {
     text-align: center;
     background-color: var(--color-light-cyan);
 }
-
+/* 
 .tip-input__odd:hover {
   border: 2px solid var(--color-strong-cyan);
-}
+} */
+.tip-input__odd
 
 ::placeholder {
   color: var(--color-cyan);
   font-family: 'Space Mono';
   font-size: 24px;
 }
+.tip-input__odd::placeholder {
+  color: var(--color-dark-cyan);
+}
 
 /* changes the default border color */
 input:focus{
     outline: none !important;
-    
+    border: 2px solid var(--color-strong-cyan);
 }
 /* hides the default arrow button */
 input::-webkit-outer-spin-button,
