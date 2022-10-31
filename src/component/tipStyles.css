@@ -75,7 +75,7 @@ span {
 }
 
 .input-cover:hover {
-  border: 2px solid var(--color-dark-cyan);
+  border: 3px solid var(--color-strong-cyan);
 }
 
 
@@ -116,7 +116,7 @@ span {
 }
 
 .tip-input__odd:hover {
-  border: 2px solid var(--color-strong-cyan);
+  border: 3px solid var(--color-strong-cyan);
 }
 .tip-input__odd
 
@@ -180,7 +180,9 @@ span {
 }
 
 p {
-  margin: 1rem 2.8rem;
+  margin: 1rem 0.4rem;
+  width: 60%;
+  text-align: center;
   color: var(--color-strong-cyan);
   font-size: 42px;
   font-weight: 700;

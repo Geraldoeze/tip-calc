@@ -43,17 +43,11 @@ const TipCal = () => {
         } else if (numOfPeople <= 0) {
             setValid(true)
         }
+        let personbill = bill * (customTip / 100) / numOfPeople;
+        let totalbill = (bill + (bill * (customTip / 100))) / numOfPeople;
 
-
-        
-        
-        
-        // let personbill = bill * (customTip / 100) / numOfPeople;
-        // let totalbill = (bill + (bill * (customTip / 100))) / numOfPeople;
-
- 
-        
-
+        setAmount(personbill);
+        setTotal(totalbill);
         
     }
     console.log(valid, isNaN(amount) )
