@@ -16,6 +16,7 @@ const TipCal = () => {
    
    
     function btnFunction(id) {
+        console.log(id + 'S')
         const x = document.getElementById(id+'S').value;
             setTip(x)
     }
@@ -76,7 +77,7 @@ const TipCal = () => {
                         id="bill" 
                         type="number" 
                         placeholder="0"
-                        // onChange={changeHandler}
+                        
                     />
                 </div>
                 
@@ -86,7 +87,7 @@ const TipCal = () => {
                     return (
                         <button
                             className="btn_keys" 
-                            id={ind+'S'} 
+                            id={ind + 'S'} 
                             type="button" 
                             value={per}
                             onClick={(id) => btnFunction(ind)}
@@ -114,7 +115,7 @@ const TipCal = () => {
                             id="numOfPeople" 
                             type="number" 
                             placeholder="0"
-                            // onChange={changeHandler}
+                           
                         />
                     </div>
                 </div>
