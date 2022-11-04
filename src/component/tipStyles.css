@@ -210,41 +210,103 @@ button:focus {
 }
 
 
-@media only screen and (max-width: 768px) {
+@media only screen and (min-width: 200px) and (max-width: 650px) {
   .tip-container {
-   width: 80%;
+    display: block;
+    width: fit-content;
+    height: fit-content;
+  }
+
+  .tip-form {
+    padding: 5px;
+    width:fit-content;
+    height: 55%;
+  }
+  .label_valid {
+    margin: 0.7rem 0.5rem 0.5rem;
+  }
+  .input-cover {
+    margin: 0.5rem 0.5rem 0.5rem;
+  }
+  .btn_cover{
+    margin: 0;
+  }
+  .btn_keys {
+    width: 44%;
+  }
+  .tip-input__odd {
+    width: 42%;
+  }
+
+
+  .tip-result {
+    width: 90%;
+    height: 45%;
+    margin: 0.5rem auto;
+  }
+  .tip-amount {
+    margin: 0 0.5rem;
+  }
+  h3{
+    font-size: 12px;
+    margin: 0.5rem;
+  }
+  p{
+    font-size: 35px;
+  }
+  span {
+    font-size: 12px;
+  }
+  .btn {
+    margin: 1rem auto;
+    
   }
 }
 
-/* @media only screen and (max-width: 413px) {
+
+@media only screen and (min-width: 651px) and (max-width: 1025px) {
   .tip-container {
-    color: red;
+    background-color: cadetblue;
   }
-} */
-
-@media only screen and (min-width: 470px) and (max-width: 810px) {
-
-}
-
-@media only screen and (min-width: 200px) and (max-width: 450px) {
-.tip-container {
-   background-color: rgb(121, 60, 60);
-   display: flex;
-   flex-direction: column;
-   width: fit-content;
-   height: fit-content;
-}
-
-.tip-form {
-  width: 98%; 
-}
-
-.input-cover {
-  width: 85%;
-}
-
-.tip-result {
-  width: 35%;
-  display: block;
-}
-}
+  .tip-form {
+    margin: 5px 1rem;
+  }
+ 
+  .input-cover {
+    height: 2.5rem;
+    margin: 0  0.8rem;
+  }
+  .tip-input {
+    height: 2rem;
+  }
+  .tip-input__odd {
+    height: 2.5rem;
+    width: 27%;
+    margin: 0 0.4rem;
+  }
+  .tip-input__odd::placeholder {
+    font-size: 18px;
+  }
+ 
+  .btn_cover {
+    margin: 0 ;
+  }
+  .btn_keys {
+    width: 27%;
+    height: 2.5rem;
+    margin-top: 0;
+    font-size: 17px;
+  }
+  .tip-result {
+    margin: 1.4rem ;
+  }
+  h3 {
+    font-size: 12px;
+  }
+  span {
+    font-size: 15px;
+  }
+  p {
+    font-size: 32px;
+  }
+ }
