@@ -40,14 +40,22 @@ const TipCal = () => {
                 setAmount(0),
                 setTotal(0)
             )
-        } else if (numOfPeople <= 0) {
+        } 
+       
+        if (numOfPeople <= 0) {
             setValid(true)
         }
+
+        if (numOfPeople >= 1 ) {
+            setValid(false);
+        }
+        
         let personbill = bill * (customTip / 100) / numOfPeople;
         let totalbill = (bill + (bill * (customTip / 100))) / numOfPeople;
-
+        
         setAmount(personbill);
         setTotal(totalbill);
+        
         
     }
     console.log(valid, isNaN(amount) )
@@ -118,11 +126,11 @@ const TipCal = () => {
             </div>
             <div className="tip-result">
               <div className="tip-amount">
-                <h3>Tip Amount<br /><span>/ person</span></h3>
+                <h3>Tip Amount<br /><span className="span_tag">/ person</span></h3>
                 <p id="tipAmount">${amount.toFixed(2)}</p>
               </div>
               <div className="tip-amount">
-                <h3>Total<br /><span>/ person</span></h3>
+                <h3>Total<br /><span className="span_tag">/ person</span></h3>
                 <p id="total">${total.toFixed(2)}</p>
               </div>
                 <button className="btn" type='reset' onClick={resetForm}>RESET</button>
