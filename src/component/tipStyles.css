@@ -37,7 +37,8 @@
 .btn_cover {
   width: 100%;
   display: flex;
-  margin: 1rem 24px;
+  margin: 0.5rem 0.8rem;
+  gap: 0.1rem;
   flex-wrap: wrap;
 } 
 
