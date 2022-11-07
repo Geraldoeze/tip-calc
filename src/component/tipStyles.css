@@ -1,6 +1,6 @@
 .tip-container {
     background-color: hsl(0, 0%, 100%);
-    height: 50%;
+    height: 55%;
     width: 60%;
     display: flex;
     border-radius: 12px;
@@ -198,6 +198,7 @@ p {
   border: 0;
   margin: auto;
   border-radius: 5px;
+  font-family: inherit;
   font-size: 15px;
   font-weight: 700;
   color: var(--color-cyan);
@@ -273,10 +274,51 @@ button:focus {
 }
 
 
-@media only screen and (min-width: 651px) and (max-width: 1025px) {
+@media only screen and (min-width: 651px) and (max-width: 950px) {
   .tip-container {
-    background-color: cadetblue;
+    width: 80%;
+    height: 60%;
   }
+  .tip-form {
+    width: 60%;
+    margin: 0.8rem;
+  }
+  .btn_cover {
+    margin: 2px 0.8rem;
+  }
+
+  .btn_keys {
+    margin: 3px 5px;
+    height: 2.3rem;
+  }
+
+  .input-cover {
+    margin: 0.3rem 1.5rem;
+  }
+  .tip-input__odd {
+    height: 2.3rem;
+    margin: 3px 5px;
+  }
+  .tip-input__odd::placeholder {
+    font-size: 15px;
+  }
+
+  .tip-result {
+    width: 40%;
+    margin: 1rem;
+  }
+  h3 {
+    font-size: 12px;
+    margin: 1rem 0.2rem;
+  }
+  
+  p {
+    font-size: 22px;
+  }
+ }
+
+ @media only screen and (min-width: 951px) and (max-width: 1120px) {
+ 
   .tip-form {
     margin: 5px 1rem;
   }
@@ -318,4 +360,4 @@ button:focus {
   p {
     font-size: 32px;
   }
- }
+  }
